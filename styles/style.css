@@ -12,3 +12,6 @@
     border: 1px solid black;
     box-sizing: border-box;
 }
+.mine{
+    background-color: red;
+}
