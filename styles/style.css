@@ -17,3 +17,8 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+.flagged{
+    background-image: url('../assets/red-triangulat-flag-vector-emoji-260nw-2225210403.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

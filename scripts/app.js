@@ -2,7 +2,6 @@ function init(){
 
     const gridElem = document.querySelector('.grid');
 
-
     const cells = []
     const gridSize = 5; // 5x5 grid
     const numberOfCells = gridSize * gridSize;
@@ -31,6 +30,9 @@ function createGrid(){
 function handelClick(event) {
     if (event.target.classList.contains('mine')) {
         console.log('Game Over! You clicked on a mine.');
+    }
+    if (flag) {
+        event.target.classList.toggle('flagged'); // add/remove flagged class on click
     }
 }
 
