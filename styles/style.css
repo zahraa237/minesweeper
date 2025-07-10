@@ -13,5 +13,7 @@
     box-sizing: border-box;
 }
 .mine{
-    background-color: red;
+    background-image: url('../assets/360_F_170082488_Tcd6GqID2P20dCg5GEv5PniLdvi036YM.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }

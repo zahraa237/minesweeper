@@ -6,12 +6,13 @@ function init(){
     const cells = []
     const gridSize = 5; // 5x5 grid
     const numberOfCells = gridSize * gridSize;
-    
+    const flagBtn = document.querySelector('#flag');
 
     let mineCount = 0;
     let numberOfMines = 5; 
+    let flag = false; 
 
-
+    flagBtn.addEventListener('click', useFlag); 
 //functions
 
 //create a grid
@@ -33,6 +34,10 @@ function handelClick(event) {
     }
 }
 
+function useFlag(){
+    flag = !flag
+    console.log(flag)
+}
 //creating mines
 function createMines() {
     while (mineCount < numberOfMines) { 
@@ -44,7 +49,9 @@ function createMines() {
     }
 }
 
+
 createGrid();
 createMines();
+useFlag();
 
 } document.addEventListener("DOMContentLoaded", init);
