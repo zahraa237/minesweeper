@@ -4,7 +4,7 @@ function init(){
 
     const cells = []
     const gridSize = 5; // 5x5 grid
-    const cellSize = 50; // Size of each cell in pixels
+    const cellSize = 50; // Size of each cell 
     const numberOfCells = gridSize * gridSize;
     const flagBtn = document.querySelector('#flag');
 
@@ -22,8 +22,12 @@ function init(){
 function createGrid(){
 
     //for every cell we want creat a div and add it to the grid
-    for (let i = 0; i < numberOfCells; i++) {
+    for (let x = 0; x < numberOfCells; x++) {
         const cell = document.createElement('div');
+
+        // for (let y = 0; y < gridSize; y++)
+        //     {cell.id.add(`${x}-${y}`); }
+
         cell.style.width = `${cellSize}px`; // Set cell width
         cell.style.height = `${cellSize}px`; // Set cell height
         cell.addEventListener('click', handelClick);  // Add click event listener
@@ -31,7 +35,7 @@ function createGrid(){
         gridElem.appendChild(cell); 
     }
 
-    //adjusting grid size based on numer/ size of cells
+    //adjusting grid size based on number/ size of cells
     gridElem.style.width = `${gridSize * cellSize}px`; 
     gridElem.style.height = `${gridSize * cellSize}px`; 
 }
@@ -60,23 +64,25 @@ function createMines() {
 }
 
 function checkBombs(){
-    cells.forEach(cell => {
-        if (checkedCells.includes(cell)) return; // Skip if cell has already been checked
-        if (checkedCells.length < 1) { //!!
-            checkedCells.push(cell); // Add the cell to checked cells
-        }
-        else {
-            if (cell.classList.contains('mine')) {
+    cells.forEach (cell => {
+        if (checkedCells.includes(cell)) return;
+        if (!cell.classList.contains('mine')) checkedCells.push(cell)})
+}
 
-            }
-        }
-    }
-)}
-
-
-
+// function checkBombs(){
+//     cells.forEach(cell => {
+//         if (checkedCells.includes(cell)) return; // Skip if cell has already been checked
+//         if (checkedCells.length < 1) { //!!                             
+//             checkedCells.push(cell); // Add the cell to checked cells
+//         }
+//         else {                                               
+//             if (cell.classList.contains('mine')) { 
+//             }
+//         }
+//     }
+// )}
 
 createGrid();
 createMines();
-
+checkBombs();
 } document.addEventListener("DOMContentLoaded", init);
